@@ -4,7 +4,7 @@ import ItemCard from "./ItemCard";
 import { useSelector } from "react-redux";
 import { FaShoppingCart } from "react-icons/fa";
 const Cart = () => {
-  const [activeCart, setActiveCart] = useState(true);
+  const [activeCart, setActiveCart] = useState(false);
   const cartItems = useSelector((state) => state.cart.cart);
   console.log(cartItems);
   return (
@@ -21,9 +21,18 @@ const Cart = () => {
             className="border-2 border-gray-600 text-gray-600 font-bold p-1 text-xl rounded-md hover:text-red-300 hover:border-red-300 cursor-pointer"
           />
         </div>
-        <ItemCard />
-        <ItemCard />
-        <ItemCard />
+        {cartItems.map((food) => {
+          return (
+            <ItemCard
+              key={food.id}
+              id={food.id}
+              name={food.name}
+              price={food.price}
+              img={food.img}
+              qty={food.qty}
+            />
+          );
+        })}
 
         <div className="bottom-0 absolute">
           <h3 className="font-semibold text-gray-800">Items:</h3>
