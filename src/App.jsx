@@ -6,6 +6,7 @@ import Error from "./Pages/Error";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { useEffect } from "react";
+import ProtectedRoutes from "./Components/ProtectedRoutes";
 const App = () => {
   useEffect(() => {
     AOS.init({
@@ -20,7 +21,10 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/success" element={<Success />} />
+        <Route
+          path="/success"
+          element={<ProtectedRoutes element={<Success />} />}
+        />
         <Route path="/*" element={<Error />} />
       </Routes>
     </BrowserRouter>
