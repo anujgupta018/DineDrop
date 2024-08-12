@@ -9,4 +9,4 @@ Currently, two official plugins are available:
 
 # Live Demo
 
-You can check the demo of "Dine-Drop" is dine-drop-two.vercel.app
+You can check the demo of "Dine-Drop" [here](https://dine-drop-two.vercel.app)
